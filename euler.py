@@ -663,12 +663,12 @@ def fac(n):
 ##                print [PS[a],PS[b],PS[c]]
 
 ###*********************************************
-##def saveToFile(l,fileName):
-##    ll = [str(x) for x in l]
-##    f = open(fileName,'w')
-##    f.write(','.join(ll))
-##    f.close()
-##    return
+def saveToFile(l,fileName):
+    ll = [str(x) for x in l]
+    f = open(fileName,'w')
+    f.write(','.join(ll))
+    f.close()
+    return
 
 ##saveToFile(PS,'millionPrimes.txt')
 
@@ -678,7 +678,7 @@ def loadFrmFile(fileName):
 ###*********************************************
 
 ##PS = list(Primes(1000000))
-PS = loadFrmFile('millionPrimes.txt')
+#PS = loadFrmFile('millionPrimes.txt')
 ##mn = 0
 ##ans = 0
 ##for j in xrange(0,len(PS)):
@@ -811,3 +811,22 @@ for i in xrange(1,250251):
     if(i%10000==0): print i
     x = i%250
     a.append(powr(x,i))
+saveToFile(a,'250250.txt')
+
+
+##a=sorted(loadFrmFile('250250.txt'))
+##DP={}
+##def S(A,i,N):
+##    if i<0: return 0
+##    if i==0 and A[i]==N: return 1
+##    if ((i,N)) not in DP:
+##        ans = S(A,i-1,N)+S(A,i-1,(250+N-A[i])%250)
+##        DP[(i,N)] = ans
+##    return DP[(i,N)]
+##
+##N=len(a)
+##x = S(a,300,300)
+##print x
+    
+
+
